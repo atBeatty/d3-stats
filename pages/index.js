@@ -14,7 +14,7 @@ export default function Home() {
 
 
     Masters Visuals
-      <Link href='/masters/2015/stats' >2015</Link>
+      {/* <Link href='/masters/2015/stats' >2015</Link> */}
 
 
 

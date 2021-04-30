@@ -1,9 +1,39 @@
 
 
-import Anime from 'react-animejs-wrapper'
-
-const AnimatedStat = ({ statName, stateValue }) => {
+import Anime, { anime } from 'react-animejs-wrapper'
 
 
-    return <div>stat display</div>
+
+const AnimatedStat = ({ playerStats }) => {
+    const { playerName, fourWeek, tenWeek, twentyFourWeek } = playerStats
+    console.log(playerName, fourWeek, tenWeek, twentyFourWeek, playerStats, "PlayerStats")
+
+
+
+    return <div>
+
+
+        <Anime
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                // backgroundColor: 'lightgrey',
+                alignItems: 'left',
+                width: '80px',
+            }}
+            config={{
+                translateX: [-35, 0],
+                scale: [0, 1],
+                loop: true,
+                easing: 'easeInOutQuad',
+                delay: anime.stagger(100, { start: 200 }),
+            }}
+
+        >
+            <div>Hi</div>
+        </Anime>
+    </div>
 }
+
+
+export default AnimatedStat
