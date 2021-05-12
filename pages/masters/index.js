@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import M2015 from '../../lib/data/m2015'
+import M2015 from '../../lib/data/M2015'
 
 
 export default function MastersIndex() {

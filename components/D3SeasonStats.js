@@ -2,7 +2,7 @@
 import * as D3 from 'd3';
 import Anime, { anime } from 'react-animejs-wrapper'
 import { useEffect, useRef, useState } from 'react'
-import M2015 from '../lib/data/m2015'
+import M2015 from '../lib/data/M2015'
 
 
 function getFullSeasonStat(timeline, stat) {

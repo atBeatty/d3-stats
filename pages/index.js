@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+
 // import {mastersDataStore} from '../lib/data/getMastersXLSX'
 
 export default function Home() {
@@ -14,9 +15,9 @@ export default function Home() {
 
 
     Masters Visuals
-      {/* <Link href='/masters/2015/stats' >2015</Link> */}
+      <Link href='/masters/2015' >2015</Link>
 
-
+      <img src='/circles.svg'></img>
 
 
     </div>

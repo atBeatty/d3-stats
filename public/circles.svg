@@ -1,0 +1,83 @@
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="465.5px"
+	 height="305.5px" viewBox="0 0 465.5 305.5" style="overflow:visible;enable-background:new 0 0 465.5 305.5;"
+	 xml:space="preserve">
+<style type="text/css">
+	.st0{fill:green;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st1{fill:yellow;stroke:#D61A1A;stroke-width:8;stroke-miterlimit:10;}
+</style>
+<defs>
+<feGaussianBlur in="SourceAlpha"
+                stdDeviation="4"
+                result="blur"/>
+<feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+
+<feSpecularLighting in="offsetBlur"
+                    surfaceScale="5" specularConstant=".75"
+                    specularExponent="20" lighting-color="purple"
+                    result="specOut">
+  <fePointLight x="-5000" y="-10000" z="20000"/>
+</feSpecularLighting>
+
+<feComposite in="specOut" in2="SourceAlpha"
+             operator="in"
+             result="specOut"/>
+             <feComposite in="SourceGraphic" in2="specOut"
+             operator="arithmetic"
+             k1="0" k2="1" k3="1" k4="0"
+             result="litPaint"/>
+             <feMerge>
+  <feMergeNode in="offsetBlur"/>
+  <feMergeNode in="litPaint"/>
+</feMerge>
+</defs>
+<path class="st0" d="M120.8,4c134.5,0,164,88.7,164,164s-32.4,133.5-133.5,133.5S4,235.7,4,154.2S37.9,4,120.8,4z"/>
+<path class="st1" d="M297.5,4c134.5,0,164,88.7,164,164S429.1,301.5,328,301.5s-147.3-65.8-147.3-147.3S214.5,4,297.5,4z"/>
+</svg> -->
+
+
+<svg width="250" viewBox="0 0 200 85"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <!-- Filter declaration -->
+    <filter id="MyFilter" filterUnits="userSpaceOnUse"
+            x="0" y="0"
+            width="200" height="120">
+
+      <!-- offsetBlur -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+
+      <!-- litPaint -->
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75"
+                          specularExponent="20" lighting-color="#bbbbbb"
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic"
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+
+
+      <feTile in="SourceGraphic" x="50" y="50"
+          width="100" height="100" />
+      <feTile/>
+      <!-- merge offsetBlur + litPaint -->
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Graphic elements -->
+  <g filter="url(#MyFilter)">
+      <path fill="none" stroke="#D90000" stroke-width="10"
+            d="M50,66 c-50,0 -50,-60 0,-60 h100 c50,0 50,60 0,60z" />
+      <path fill="#D90000"
+            d="M60,56 c-30,0 -30,-40 0,-40 h80 c30,0 30,40 0,40z" />
+      <g fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana" >
+        <text x="52" y="52">SVG</text>
+      </g>
+  </g>
+</svg>

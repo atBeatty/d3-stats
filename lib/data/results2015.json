@@ -1,0 +1,487 @@
+[
+    {
+        "Player": "J. Spieth",
+        "Total": "-18",
+        "Pos": "1"
+    },
+    {
+        "Player": "P. Mickelson",
+        "Total": "-14",
+        "Pos": "2"
+    },
+    {
+        "Player": "J. Rose",
+        "Total": "-14",
+        "Pos": "2"
+    },
+    {
+        "Player": "R. McIlroy",
+        "Total": "-12",
+        "Pos": "4"
+    },
+    {
+        "Player": "H. Matsuyama",
+        "Total": "-11",
+        "Pos": "5"
+    },
+    {
+        "Player": "I. Poulter",
+        "Total": "-9",
+        "Pos": "6"
+    },
+    {
+        "Player": "D. Johnson",
+        "Total": "-9",
+        "Pos": "6"
+    },
+    {
+        "Player": "P. Casey",
+        "Total": "-9",
+        "Pos": "6"
+    },
+    {
+        "Player": "C. Hoffman",
+        "Total": "-8",
+        "Pos": "9"
+    },
+    {
+        "Player": "H. Mahan",
+        "Total": "-8",
+        "Pos": "9"
+    },
+    {
+        "Player": "Z. Johnson",
+        "Total": "-8",
+        "Pos": "9"
+    },
+    {
+        "Player": "R. Moore",
+        "Total": "-6",
+        "Pos": "12"
+    },
+    {
+        "Player": "K. Na",
+        "Total": "-6",
+        "Pos": "12"
+    },
+    {
+        "Player": "B. Haas",
+        "Total": "-6",
+        "Pos": "12"
+    },
+    {
+        "Player": "K. Streelman",
+        "Total": "-6",
+        "Pos": "12"
+    },
+    {
+        "Player": "R. Fowler",
+        "Total": "-6",
+        "Pos": "12"
+    },
+    {
+        "Player": "S. García",
+        "Total": "-5",
+        "Pos": "17"
+    },
+    {
+        "Player": "T. Woods",
+        "Total": "-5",
+        "Pos": "17"
+    },
+    {
+        "Player": "L. Oosthuizen",
+        "Total": "-4",
+        "Pos": "19"
+    },
+    {
+        "Player": "H. Stenson",
+        "Total": "-4",
+        "Pos": "19"
+    },
+    {
+        "Player": "R. Henley",
+        "Total": "-3",
+        "Pos": "21"
+    },
+    {
+        "Player": "M. O'Meara",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "B. Wiesberger",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "P. Reed",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "Á. Cabrera",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "E. Els",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "K. Bradley",
+        "Total": "-2",
+        "Pos": "22"
+    },
+    {
+        "Player": "M. Hoffmann",
+        "Total": "-1",
+        "Pos": "28"
+    },
+    {
+        "Player": "S. Stricker",
+        "Total": "-1",
+        "Pos": "28"
+    },
+    {
+        "Player": "W. Simpson",
+        "Total": "-1",
+        "Pos": "28"
+    },
+    {
+        "Player": "J. Blixt",
+        "Total": "-1",
+        "Pos": "28"
+    },
+    {
+        "Player": "J. Day",
+        "Total": "-1",
+        "Pos": "28"
+    },
+    {
+        "Player": "S.M. Bae",
+        "Total": "E",
+        "Pos": "33"
+    },
+    {
+        "Player": "R. Palmer",
+        "Total": "E",
+        "Pos": "33"
+    },
+    {
+        "Player": "B. Koepka",
+        "Total": "E",
+        "Pos": "33"
+    },
+    {
+        "Player": "C. Kirk",
+        "Total": "E",
+        "Pos": "33"
+    },
+    {
+        "Player": "J. Donaldson",
+        "Total": "E",
+        "Pos": "33"
+    },
+    {
+        "Player": "J. Walker",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "S. Noh",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "C. Schwartzel",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "J. Senden",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "C. Tringale",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "A. Scott",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "D. Willett",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "B. Watson",
+        "Total": "1",
+        "Pos": "38"
+    },
+    {
+        "Player": "M. Kuchar",
+        "Total": "2",
+        "Pos": "46"
+    },
+    {
+        "Player": "L. Westwood",
+        "Total": "2",
+        "Pos": "46"
+    },
+    {
+        "Player": "G. Ogilvy",
+        "Total": "3",
+        "Pos": "48"
+    },
+    {
+        "Player": "J. Dufner",
+        "Total": "4",
+        "Pos": "49"
+    },
+    {
+        "Player": "A. Lahiri",
+        "Total": "4",
+        "Pos": "49"
+    },
+    {
+        "Player": "E. Compton",
+        "Total": "5",
+        "Pos": "51"
+    },
+    {
+        "Player": "G. McDowell",
+        "Total": "6",
+        "Pos": "52"
+    },
+    {
+        "Player": "D. Clarke",
+        "Total": "6",
+        "Pos": "52"
+    },
+    {
+        "Player": "V. Singh",
+        "Total": "7",
+        "Pos": "54"
+    },
+    {
+        "Player": "T. Jaidee",
+        "Total": "9",
+        "Pos": "55"
+    },
+    {
+        "Player": "I. Woosnam",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Domínguez",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "S. Lyle",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "S. Harvey",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "L. Mize",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "J. Furyk",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "K. Stadler",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "C. Villegas",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Ilonen",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Grace",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Langer",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "T. Immelman",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Snedeker",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "V. Dubuisson",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Neil",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "T. Watson",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "G. Yang",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Martin",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Meth",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Crenshaw",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Kaymer",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Every",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "J. Olazábal",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Harman",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "R. Streb",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "T. Bjørn",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "P. Harrington",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Crane",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "J. Luiten",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "G. Woodland",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Todd",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Weir",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "B. Horschel",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "M. Jiménez",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "C. Conners",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "A. Murdaca",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "J. Hahn",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "L. Donald",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "S. Lowry",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "J. B. Holmes",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "F. Couples",
+        "Total": "",
+        "Pos": "Cut"
+    },
+    {
+        "Player": "S. Gallacher",
+        "Total": "",
+        "Pos": "Cut"
+    }
+]
