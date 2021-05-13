@@ -1,15 +1,13 @@
 // import AnimeJS from "../components/AnimeJS";
 
-export default function PlayerCard({ handleOnClick, player }) {
+export default function PlayerCard({ player }) {
 
 
 
-    const handleBeingSelected = () => handleOnClick(player)
 
 
     return <div className='player-wrapper'>
-        <h3 onClick={handleBeingSelected}>{player.player}</h3>
-
+        <h1>{player.player}</h1>
 
 
 
