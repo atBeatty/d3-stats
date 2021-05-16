@@ -16,7 +16,7 @@ const D3ScatterPlot = ({ dataset }) => {
         setSelectedStat(e.target.name)
         const minVal = D3.min(dataset.map(player => player.stats[e.target.name]))
         const maxVal = D3.max(dataset.map(player => player.stats[e.target.name]))
-        setDomainY([maxVal + 20, minVal])
+        setDomainY([maxVal, minVal])
         console.log(minVal, maxVal)
     }
     console.log()
@@ -32,7 +32,7 @@ const D3ScatterPlot = ({ dataset }) => {
         svg.attr("width", size - 200).attr("height", size - 200)
 
         const x = D3.scaleLinear()
-            .domain([0, 70])
+            .domain([0, 18])
             .range([100, 500])
 
         svg.append('g')
@@ -54,21 +54,33 @@ const D3ScatterPlot = ({ dataset }) => {
             .data(dataset) // the .filter part is just to keep a few dots on the chart, not all of them
             .enter()
             .append("circle")
-            .attr("cx", (d) => x(d.stats.finish))
-            .attr("cy", (d) => y(d.stats[selectedStat]))
+            .attr("cx", (d) => x(d.stats.avgGIRperRnd_twentyFourWeek))
+            .attr("cy", (d) => d.stats[selectedStat] != 0 && y(d.stats[selectedStat]))
             .attr("r", 7)
             .style("fill", "#69b3a2")
             .style("opacity", (d) => d.stats.finish < 11 ? 1 : 0.2)
             .style("stroke", "white")
 
-        svg.selectAll("text")
+        svg.select(".scatter-plot").selectAll("text")
             .data(dataset)
             .enter()
             .append("text")
-            // Add your code below this line
-            .attr("x", (d) => x(d.stats.finish))
-            .attr("y", (d) => size - 200 - y(d.stats[selectedStat]))
-            .attr("text", d => d)
+            .attr("x", d => x(d.stats.avgGIRperRnd_twentyFourWeek))
+            .attr("y", d => y(d.stats[selectedStat]))
+            .text(d => `${d.player} ${d.stats.finish}`)
+            .style("opacity", "0")
+            .on('mouseover', function (d, i) {
+                D3.select(this).transition()
+                    .duration('1000')
+                    .style("opacity", 1);
+            })
+            .on('mouseout', function (d, i) {
+                D3.select(this).transition()
+                    .duration('1000')
+                    .style("opacity", 0);
+            })
+
+
 
         // svg.append('g').attr("class", "scatter-plot")
         //     .selectAll("dot")
@@ -93,15 +105,14 @@ const D3ScatterPlot = ({ dataset }) => {
 
     return <>
         {Object.keys(dataset[1].stats).map((stat, index) => <button name={stat} onClick={(e) => handleStatClick(e)} key={index}> {stat}</button >)}
+        <h2>{selectedStat}</h2>
 
         <div className="d3-container" ref={d3Ref}>
             HI
         </div>
         <style jsx>
             {`
-            div * {
-                transition: all .5s ease
-            }
+           
             .d3-container {
                 padding: 20px;
             }

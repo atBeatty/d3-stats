@@ -17,7 +17,7 @@ export default function Home() {
     Masters Visuals
       <Link href='/masters/2015' >2015</Link>
 
-      <img src='/circles.svg'></img>
+      {/* <img src='/circles.svg'></img> */}
 
 
     </div>
