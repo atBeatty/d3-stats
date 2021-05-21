@@ -10,75 +10,94 @@ import M2015 from '../lib/data/M2015'
 const D3ScatterPlot = ({ dataset }) => {
 
     const [selectedStat, setSelectedStat] = useState("avgPuttsperRnd_fourWeek")
-    const [domainY, setDomainY] = useState([10, 45])
+    const [domainY, setDomainY] = useState([])
 
     const handleStatClick = (e) => {
         setSelectedStat(e.target.name)
-        const minVal = D3.min(dataset.map(player => player.stats[e.target.name]))
-        const maxVal = D3.max(dataset.map(player => player.stats[e.target.name]))
-        setDomainY([maxVal, minVal])
-        console.log(minVal, maxVal)
+        const minVal = D3.min(dataset.map(player => parseFloat(player.stats[e.target.name])))
+        const maxVal = D3.max(dataset.map(player => parseFloat(player.stats[e.target.name])))
+        setDomainY([minVal, maxVal])
     }
-    console.log()
-    // console.log(dataset)
-
     const d3Ref = useRef()
+
+
 
     useEffect(() => {
         D3.selectAll('svg').remove()
         const size = 800;
-        const svg = D3.select(d3Ref.current).append('svg')
+        const margin = 100;
+        const svg = D3.select(d3Ref.current).append('svg').attr("width", size).attr("height", size)
 
-        svg.attr("width", size - 200).attr("height", size - 200)
+        const x = D3.scaleLinear().domain([20, 40]).range([margin, size - margin])
+        const y = D3.scaleLinear().domain([5, 32]).range([500, 100]);
 
-        const x = D3.scaleLinear()
-            .domain([0, 18])
-            .range([100, 500])
+        svg.append('g').attr("class", "axis x").attr("transform", "translate(0, 550)").call(D3.axisBottom(x))
+        svg.append("g").attr("class", "axis y").attr("transform", "translate(200)").call(D3.axisLeft(y))
 
-        svg.append('g')
-            .attr("class", "axis x")
-            .attr("transform", "translate(0, 550)")
-            .call(D3.axisBottom(x))
+        svg.append("text").attr("x", (size - margin) / 2).attr("y", size - margin - margin).text("Avg Putts Per Rnd").style("font-family", "Arial")
+        svg.append("text").attr("x", 100).attr("y", 450).text("Avg GIR Per Rnd").style("font-family", "Arial").style("transform-origin", "left").style("transform", "rotate(-90deg)")
 
-        var y = D3.scaleLinear()
-            .domain(domainY)
-            .range([500, 100]);
-        console.log(domainY)
-
-        svg.append("g")
-            .attr("class", "axis y")
-            .attr("transform", "translate (50)").call(D3.axisLeft(y))
-
-        svg.append('g').attr("class", "scatter-plot")
-            .selectAll("dot")
+        svg.selectAll("dot")
             .data(dataset) // the .filter part is just to keep a few dots on the chart, not all of them
             .enter()
             .append("circle")
-            .attr("cx", (d) => x(d.stats.avgGIRperRnd_twentyFourWeek))
-            .attr("cy", (d) => d.stats[selectedStat] != 0 && y(d.stats[selectedStat]))
-            .attr("r", 7)
-            .style("fill", "#69b3a2")
-            .style("opacity", (d) => d.stats.finish < 11 ? 1 : 0.2)
-            .style("stroke", "white")
+            .attr("cx", d => x(d.stats.avgPuttsperRnd_fourWeek))
+            .attr("cy", d => y(d.stats.avgGIRperRnd_fourWeek))
+            .attr("r", 5)
+            .style("fill", "green")
+            .style("opacity", (d) => (!d.stats.finish | d.stats.finish === "Cut") ? "0" : "1")
+        // .on('mouseover', function (d, i) {
+        //     D3.select(this).transition()
+        //         .style("fill", "red");
+        // })
+        // .on('mouseout', function (d, i) {
+        //     D3.select(this).transition()
+        //         .duration('100')
+        //         .style("opacity", .4)
+        //         .style("fill", "#69b3a2");
+        // })
 
-        svg.select(".scatter-plot").selectAll("text")
+
+
+        svg.selectAll("dot")
             .data(dataset)
             .enter()
-            .append("text")
-            .attr("x", d => x(d.stats.avgGIRperRnd_twentyFourWeek))
-            .attr("y", d => y(d.stats[selectedStat]))
-            .text(d => `${d.player} ${d.stats.finish}`)
-            .style("opacity", "0")
-            .on('mouseover', function (d, i) {
-                D3.select(this).transition()
-                    .duration('1000')
-                    .style("opacity", 1);
-            })
-            .on('mouseout', function (d, i) {
-                D3.select(this).transition()
-                    .duration('1000')
-                    .style("opacity", 0);
-            })
+            .append("circle")
+            .attr("cx", (d) => x(d.stats.avgPuttsperRnd_tenWeek))
+            .attr("cy", (d) => y(d.stats.avgGIRperRnd_tenWeek))
+            .attr("r", 5)
+
+            .style("opacity", (d) => (!d.stats.finish | d.stats.finish === "Cut") ? "0" : "1")
+        // .on('mouseover', function (d, i) {
+        //     D3.select(this).transition()
+        //         .style("fill", "red");
+        // })
+        // .on('mouseout', function (d, i) {
+        //     D3.select(this).transition()
+        //         .duration('100')
+        //         .style("opacity", .4)
+        //         .style("fill", "#69b3a2");
+        // })
+
+        // svg.select(".scatter-plot").selectAll("text")
+        //     .data(dataset)
+        //     .enter()
+        //     .append("text")
+        //     .attr("x", d => x(d.stats.avgPuttsperRnd_fourWeek))
+        //     .attr("y", d => y(d.stats.avgGIRperRnd_fourWeek))
+
+        //     .text(d => `${d.player}`)
+        //     .style("opacity", 0)
+        //     .on('mouseover', function (d, i) {
+        //         D3.select(this).transition()
+        //             .duration('100')
+        //             .style("opacity", 1);
+        //     })
+        //     .on('mouseout', function (d, i) {
+        //         D3.select(this).transition()
+        //             .duration('100')
+        //             .style("opacity", 0);
+        //     })
 
 
 
@@ -108,6 +127,7 @@ const D3ScatterPlot = ({ dataset }) => {
         <h2>{selectedStat}</h2>
 
         <div className="d3-container" ref={d3Ref}>
+            <svg style={{ width: "100px" }}></svg>
             HI
         </div>
         <style jsx>
