@@ -14,91 +14,69 @@ import { useRouter } from 'next/router'
 
 
 export default function PlayerBreakdown({ playerStats }) {
+    console.log(playerStats)
 
+    const playerName = playerStats.four["Player"]
 
+    const playerFourWeek = Object.entries(playerStats.four)
+    const playerTenWeek = Object.entries(playerStats.ten)
+    const playerTwentyFourWeek = Object.entries(playerStats.twentyFour)
 
-
-
-    const router = useRouter()
-
-    const playerName = router.asPath.split("%20").join(" ").split("/")[1]
-    const playerObj = playerStats.find(pl => pl.player === playerName)
-    console.log(playerObj)
 
 
 
 
     const d3Ref = useRef()
-
-    const svgStyle = {
-        width: 500,
-        height: 500,
-        margin: 50,
-    }
+    const size = 800;
+    const padding = 60;
+    const marginT = 100;
+    const marginB = 100;
+    const marginL = 100;
+    const marginR = 100;
+    const width = size - marginR - marginL
+    const height = size - marginT - marginB
 
 
     useEffect(() => {
-        D3.selectAll('svg').remove()
-        D3.selectAll('g').remove()
-        const svg = D3.select(d3Ref.current).append('svg').attr("height", svgStyle.height)
+        const xScale = D3.scaleBand().domain(playerFourWeek).range([padding, width - padding])
+        // const yScale = D3.scaleLinear().domain([0, 500]).range([height - padding, padding])
 
-
-
-
-        // SCALES
-
-        const xScale = D3.scaleLinear().domain([0, 200]).range([0, 400])
-        const yScale = D3.scaleLinear().domain([200, 0]).range([50, 445])
-        // const yScale = D3.scaleLinear().domain([200, 0]).range([svgStyle.margin, svgStyle.height - svgStyle.margin])
-
-
-        // const yScale = D3.scaleLinear()
-
-        svg.append('g')
-            .attr('class', 'axis x')
-            .attr('transform', `translate(${svgStyle.margin}, ${svgStyle.height - svgStyle.margin})`)
-            .style("stroke", "red")
-            .call(D3.axisBottom(xScale))
-        svg.append('g')
-            .attr('class', 'axis y')
-            .attr('transform', `translate(50)`)
-            .style("stroke", "red")
-            .call(D3.axisLeft(yScale))
-
-        svg.append('g')
-            .attr('class', 'bar-chart')
-            .selectAll('rect')
-            .data(Object.entries(playerObj.stats))
-            .enter()
-            .append('rect')
-            .attr("x", (d, i) => svgStyle.margin + (i * 10))
-            .attr("y", (d, i) => 50)
-            .attr("height", (d) => d[1])
-            .attr("width", 5)
-            .style("fill", "blue")
+        D3.select('g.x-axis').attr(`transform`, `translate(0, ${height - padding})`).call(D3.axisBottom(xScale))
+        D3.select('g.y-axis').attr(`transform`, `translate(${padding})`).call(D3.axisLeft(yScale))
 
 
 
 
 
+    }, [])
 
 
 
+    return <div style={{ border: "1px solid yellow" }} className="player-breakdown">
+
+        <div className="player-breakdown-container">
+            <h1>{playerName}</h1>
+        </div>
+        <div className="infographic-holder">
+            <svg width={width} height={height} style={{ background: "red" }} ref={d3Ref}>
+                <g className="x-axis"></g>
+                <g className="y-axis"></g>
+            </svg>
+        </div>
 
 
+        <style jsx>
+            {`
+                
 
-
-    })
-
-
-
-
-
-
-    return <div className="player-breakdown-container">
-        <h2>{playerObj && playerObj.player}</h2>
-
-        <div style={svgStyle} ref={d3Ref}></div>
-
+        `}
+        </style>
     </div>
+
+
+
+
+
+
+
 }
