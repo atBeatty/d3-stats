@@ -7,7 +7,7 @@ import D3StatBox from '../components/D3StatBox'
 
 export default function PlayerCard({ playerData }) {
     const [typeOfState, setTypeOfStat] = useState('')
-    console.log(playerData, "PLAYERDATA")
+    // console.log(playerData, "PLAYERDATA")
 
 
 

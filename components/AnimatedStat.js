@@ -1,13 +1,19 @@
 
 
+import { useEffect } from 'react'
 import Anime, { anime } from 'react-animejs-wrapper'
 
 
 
 const AnimatedStat = ({ playerStats }) => {
     const { playerName, fourWeek, tenWeek, twentyFourWeek } = playerStats
-    console.log(playerName, fourWeek, tenWeek, twentyFourWeek, playerStats, "PlayerStats")
+    // console.log(playerName, fourWeek, tenWeek, twentyFourWeek, playerStats, "PlayerStats")
 
+
+    useEffect(() => {
+
+
+    })
 
 
     return <div>

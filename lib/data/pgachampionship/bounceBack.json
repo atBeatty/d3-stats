@@ -1,0 +1,488 @@
+[
+    {
+        "bounceBackRank": "1",
+        "playerName": "Shane Lowry",
+        "rounds": "4",
+        "bounceBackPercentage": "54.55"
+    },
+    {
+        "bounceBackRank": "2",
+        "playerName": "Brooks Koepka",
+        "rounds": "4",
+        "bounceBackPercentage": "38.46"
+    },
+    {
+        "bounceBackRank": "3",
+        "playerName": "Talor Gooch",
+        "rounds": "4",
+        "bounceBackPercentage": "37.50"
+    },
+    {
+        "bounceBackRank": "4",
+        "playerName": "Padraig Harrington",
+        "rounds": "4",
+        "bounceBackPercentage": "36.36"
+    },
+    {
+        "bounceBackRank": "5",
+        "playerName": "Jason Scrivener",
+        "rounds": "4",
+        "bounceBackPercentage": "33.33"
+    },
+    {
+        "bounceBackRank": "6",
+        "playerName": "Henrik Stenson",
+        "rounds": "4",
+        "bounceBackPercentage": "31.58"
+    },
+    {
+        "bounceBackRank": "7",
+        "playerName": "Branden Grace",
+        "rounds": "4",
+        "bounceBackPercentage": "28.57"
+    },
+    {
+        "bounceBackRank": "T8",
+        "playerName": "Rory McIlroy",
+        "rounds": "4",
+        "bounceBackPercentage": "25.00"
+    },
+    {
+        "bounceBackRank": "T8",
+        "playerName": "Emiliano Grillo",
+        "rounds": "4",
+        "bounceBackPercentage": "25.00"
+    },
+    {
+        "bounceBackRank": "T8",
+        "playerName": "Corey Conners",
+        "rounds": "4",
+        "bounceBackPercentage": "25.00"
+    },
+    {
+        "bounceBackRank": "T8",
+        "playerName": "Aaron Wise",
+        "rounds": "4",
+        "bounceBackPercentage": "25.00"
+    },
+    {
+        "bounceBackRank": "T12",
+        "playerName": "Joel Dahmen",
+        "rounds": "4",
+        "bounceBackPercentage": "23.53"
+    },
+    {
+        "bounceBackRank": "T12",
+        "playerName": "Brendan Steele",
+        "rounds": "4",
+        "bounceBackPercentage": "23.53"
+    },
+    {
+        "bounceBackRank": "T14",
+        "playerName": "Byeong Hun An",
+        "rounds": "4",
+        "bounceBackPercentage": "23.08"
+    },
+    {
+        "bounceBackRank": "T14",
+        "playerName": "Tyrrell Hatton",
+        "rounds": "4",
+        "bounceBackPercentage": "23.08"
+    },
+    {
+        "bounceBackRank": "16",
+        "playerName": "Jimmy Walker",
+        "rounds": "4",
+        "bounceBackPercentage": "22.22"
+    },
+    {
+        "bounceBackRank": "T17",
+        "playerName": "Stewart Cink",
+        "rounds": "4",
+        "bounceBackPercentage": "21.43"
+    },
+    {
+        "bounceBackRank": "T17",
+        "playerName": "Cam Davis",
+        "rounds": "4",
+        "bounceBackPercentage": "21.43"
+    },
+    {
+        "bounceBackRank": "T17",
+        "playerName": "Joaquin Niemann",
+        "rounds": "4",
+        "bounceBackPercentage": "21.43"
+    },
+    {
+        "bounceBackRank": "T17",
+        "playerName": "Robert MacIntyre",
+        "rounds": "4",
+        "bounceBackPercentage": "21.43"
+    },
+    {
+        "bounceBackRank": "21",
+        "playerName": "Harris English",
+        "rounds": "4",
+        "bounceBackPercentage": "21.05"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Abraham Ancer",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Scottie Scheffler",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Phil Mickelson",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Charley Hoffman",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Jason Kokrak",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Garrick Higgo",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T22",
+        "playerName": "Brad Marek",
+        "rounds": "4",
+        "bounceBackPercentage": "20.00"
+    },
+    {
+        "bounceBackRank": "T29",
+        "playerName": "Ian Poulter",
+        "rounds": "4",
+        "bounceBackPercentage": "18.75"
+    },
+    {
+        "bounceBackRank": "T29",
+        "playerName": "Bryson DeChambeau",
+        "rounds": "4",
+        "bounceBackPercentage": "18.75"
+    },
+    {
+        "bounceBackRank": "T29",
+        "playerName": "Matt Fitzpatrick",
+        "rounds": "4",
+        "bounceBackPercentage": "18.75"
+    },
+    {
+        "bounceBackRank": "T29",
+        "playerName": "Tom Hoge",
+        "rounds": "4",
+        "bounceBackPercentage": "18.75"
+    },
+    {
+        "bounceBackRank": "33",
+        "playerName": "Kevin Streelman",
+        "rounds": "4",
+        "bounceBackPercentage": "18.18"
+    },
+    {
+        "bounceBackRank": "T34",
+        "playerName": "Paul Casey",
+        "rounds": "4",
+        "bounceBackPercentage": "16.67"
+    },
+    {
+        "bounceBackRank": "T34",
+        "playerName": "Justin Rose",
+        "rounds": "4",
+        "bounceBackPercentage": "16.67"
+    },
+    {
+        "bounceBackRank": "T34",
+        "playerName": "Hideki Matsuyama",
+        "rounds": "4",
+        "bounceBackPercentage": "16.67"
+    },
+    {
+        "bounceBackRank": "T34",
+        "playerName": "Jordan Spieth",
+        "rounds": "4",
+        "bounceBackPercentage": "16.67"
+    },
+    {
+        "bounceBackRank": "38",
+        "playerName": "Russell Henley",
+        "rounds": "4",
+        "bounceBackPercentage": "15.79"
+    },
+    {
+        "bounceBackRank": "T39",
+        "playerName": "Daniel van Tonder",
+        "rounds": "4",
+        "bounceBackPercentage": "15.38"
+    },
+    {
+        "bounceBackRank": "T39",
+        "playerName": "Chan Kim",
+        "rounds": "4",
+        "bounceBackPercentage": "15.38"
+    },
+    {
+        "bounceBackRank": "T39",
+        "playerName": "Viktor Hovland",
+        "rounds": "4",
+        "bounceBackPercentage": "15.38"
+    },
+    {
+        "bounceBackRank": "T39",
+        "playerName": "Gary Woodland",
+        "rounds": "4",
+        "bounceBackPercentage": "15.38"
+    },
+    {
+        "bounceBackRank": "T39",
+        "playerName": "Webb Simpson",
+        "rounds": "4",
+        "bounceBackPercentage": "15.38"
+    },
+    {
+        "bounceBackRank": "T44",
+        "playerName": "Richy Werenski",
+        "rounds": "4",
+        "bounceBackPercentage": "14.29"
+    },
+    {
+        "bounceBackRank": "T44",
+        "playerName": "Christiaan Bezuidenhout",
+        "rounds": "4",
+        "bounceBackPercentage": "14.29"
+    },
+    {
+        "bounceBackRank": "T44",
+        "playerName": "Harold Varner III",
+        "rounds": "4",
+        "bounceBackPercentage": "14.29"
+    },
+    {
+        "bounceBackRank": "T44",
+        "playerName": "Robert Streb",
+        "rounds": "4",
+        "bounceBackPercentage": "14.29"
+    },
+    {
+        "bounceBackRank": "T44",
+        "playerName": "Matt Wallace",
+        "rounds": "4",
+        "bounceBackPercentage": "14.29"
+    },
+    {
+        "bounceBackRank": "T49",
+        "playerName": "Patrick Reed",
+        "rounds": "4",
+        "bounceBackPercentage": "13.33"
+    },
+    {
+        "bounceBackRank": "T49",
+        "playerName": "Danny Willett",
+        "rounds": "4",
+        "bounceBackPercentage": "13.33"
+    },
+    {
+        "bounceBackRank": "T49",
+        "playerName": "Sam Horsfield",
+        "rounds": "4",
+        "bounceBackPercentage": "13.33"
+    },
+    {
+        "bounceBackRank": "T49",
+        "playerName": "Billy Horschel",
+        "rounds": "4",
+        "bounceBackPercentage": "13.33"
+    },
+    {
+        "bounceBackRank": "T49",
+        "playerName": "Martin Laird",
+        "rounds": "4",
+        "bounceBackPercentage": "13.33"
+    },
+    {
+        "bounceBackRank": "T54",
+        "playerName": "Rickie Fowler",
+        "rounds": "4",
+        "bounceBackPercentage": "12.50"
+    },
+    {
+        "bounceBackRank": "T54",
+        "playerName": "Harry Higgs",
+        "rounds": "4",
+        "bounceBackPercentage": "12.50"
+    },
+    {
+        "bounceBackRank": "T54",
+        "playerName": "Dean Burmester",
+        "rounds": "4",
+        "bounceBackPercentage": "12.50"
+    },
+    {
+        "bounceBackRank": "T54",
+        "playerName": "Cameron Smith",
+        "rounds": "4",
+        "bounceBackPercentage": "12.50"
+    },
+    {
+        "bounceBackRank": "T54",
+        "playerName": "Ben Cook",
+        "rounds": "4",
+        "bounceBackPercentage": "12.50"
+    },
+    {
+        "bounceBackRank": "T59",
+        "playerName": "Tom Lewis",
+        "rounds": "4",
+        "bounceBackPercentage": "11.76"
+    },
+    {
+        "bounceBackRank": "T59",
+        "playerName": "Daniel Berger",
+        "rounds": "4",
+        "bounceBackPercentage": "11.76"
+    },
+    {
+        "bounceBackRank": "T59",
+        "playerName": "Carlos Ortiz",
+        "rounds": "4",
+        "bounceBackPercentage": "11.76"
+    },
+    {
+        "bounceBackRank": "62",
+        "playerName": "Sungjae Im",
+        "rounds": "4",
+        "bounceBackPercentage": "11.11"
+    },
+    {
+        "bounceBackRank": "T63",
+        "playerName": "Will Zalatoris",
+        "rounds": "4",
+        "bounceBackPercentage": "10.00"
+    },
+    {
+        "bounceBackRank": "T63",
+        "playerName": "Jon Rahm",
+        "rounds": "4",
+        "bounceBackPercentage": "10.00"
+    },
+    {
+        "bounceBackRank": "T63",
+        "playerName": "Bubba Watson",
+        "rounds": "4",
+        "bounceBackPercentage": "10.00"
+    },
+    {
+        "bounceBackRank": "66",
+        "playerName": "Brian Gay",
+        "rounds": "4",
+        "bounceBackPercentage": "9.52"
+    },
+    {
+        "bounceBackRank": "T67",
+        "playerName": "Keegan Bradley",
+        "rounds": "4",
+        "bounceBackPercentage": "9.09"
+    },
+    {
+        "bounceBackRank": "T67",
+        "playerName": "Jason Day",
+        "rounds": "4",
+        "bounceBackPercentage": "9.09"
+    },
+    {
+        "bounceBackRank": "T69",
+        "playerName": "Steve Stricker",
+        "rounds": "4",
+        "bounceBackPercentage": "8.33"
+    },
+    {
+        "bounceBackRank": "T69",
+        "playerName": "Collin Morikawa",
+        "rounds": "4",
+        "bounceBackPercentage": "8.33"
+    },
+    {
+        "bounceBackRank": "71",
+        "playerName": "Matt Jones",
+        "rounds": "4",
+        "bounceBackPercentage": "7.69"
+    },
+    {
+        "bounceBackRank": "T72",
+        "playerName": "Lee Westwood",
+        "rounds": "4",
+        "bounceBackPercentage": "6.67"
+    },
+    {
+        "bounceBackRank": "T72",
+        "playerName": "Denny McCarthy",
+        "rounds": "4",
+        "bounceBackPercentage": "6.67"
+    },
+    {
+        "bounceBackRank": "T72",
+        "playerName": "Rasmus Hojgaard",
+        "rounds": "4",
+        "bounceBackPercentage": "6.67"
+    },
+    {
+        "bounceBackRank": "75",
+        "playerName": "Adam Hadwin",
+        "rounds": "4",
+        "bounceBackPercentage": "6.25"
+    },
+    {
+        "bounceBackRank": "76",
+        "playerName": "Wyndham Clark",
+        "rounds": "4",
+        "bounceBackPercentage": "5.88"
+    },
+    {
+        "bounceBackRank": "77",
+        "playerName": "Lucas Herbert",
+        "rounds": "4",
+        "bounceBackPercentage": "5.26"
+    },
+    {
+        "bounceBackRank": "T78",
+        "playerName": "Patrick Cantlay",
+        "rounds": "4",
+        "bounceBackPercentage": ".00"
+    },
+    {
+        "bounceBackRank": "T78",
+        "playerName": "Tony Finau",
+        "rounds": "4",
+        "bounceBackPercentage": ".00"
+    },
+    {
+        "bounceBackRank": "T78",
+        "playerName": "Louis Oosthuizen",
+        "rounds": "4",
+        "bounceBackPercentage": ".00"
+    },
+    {
+        "bounceBackRank": "T78",
+        "playerName": "Alex Noren",
+        "rounds": "4",
+        "bounceBackPercentage": ".00"
+    }
+]

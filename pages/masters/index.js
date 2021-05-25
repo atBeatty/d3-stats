@@ -24,7 +24,7 @@ export default function MastersIndex({ data }) {
 
 
     function collectPlayer(player) {
-        console.log(player, "PLAYER")
+        // console.log(player, "PLAYER")
         const playerStats = {}
         playerStats.four = data.four.find(pl => pl.Player === player)
         playerStats.ten = data.ten.find(pl => pl.Player === player)

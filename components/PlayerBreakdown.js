@@ -14,11 +14,10 @@ import { useRouter } from 'next/router'
 
 
 export default function PlayerBreakdown({ playerStats }) {
-    console.log(playerStats)
+    // console.log(playerStats)
 
     const playerName = playerStats.four["Player"]
 
-    const playerFourWeek = Object.entries(playerStats.four)
     const playerTenWeek = Object.entries(playerStats.ten)
     const playerTwentyFourWeek = Object.entries(playerStats.twentyFour)
 
@@ -38,11 +37,10 @@ export default function PlayerBreakdown({ playerStats }) {
 
 
     useEffect(() => {
-        const xScale = D3.scaleBand().domain(playerFourWeek).range([padding, width - padding])
-        // const yScale = D3.scaleLinear().domain([0, 500]).range([height - padding, padding])
 
-        D3.select('g.x-axis').attr(`transform`, `translate(0, ${height - padding})`).call(D3.axisBottom(xScale))
-        D3.select('g.y-axis').attr(`transform`, `translate(${padding})`).call(D3.axisLeft(yScale))
+
+        // D3.select('g.x-axis').attr(`transform`, `translate(0, ${height - padding})`).call(D3.axisBottom(xScale))
+        // D3.select('g.y-axis').attr(`transform`, `translate(${padding})`).call(D3.axisLeft(yScale))
 
 
 

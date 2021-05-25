@@ -7,7 +7,7 @@ import { style } from 'd3';
 
 
 const D3StatBox = ({ playerStats }) => {
-    console.log(Object.entries(playerStats.stats))
+    // console.log(Object.entries(playerStats.stats))
     const d3Ref = useRef()
 
 
