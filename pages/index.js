@@ -47,7 +47,7 @@ export async function getStaticProps() {
 
 export default function Home(props) {
 
-  console.log(props)
+  // console.log(props)
 
 
 
