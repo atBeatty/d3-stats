@@ -15,7 +15,6 @@ const D3SeasonStats = ({ dataset }) => {
     const drivingDistanceTen = getFullSeasonStat("ten", "avgDrDist")
     const drivingDistanceTwentyFour = getFullSeasonStat("twentyFour", "avgDrDist")
 
-    console.log()
 
 
 
