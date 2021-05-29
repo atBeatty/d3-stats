@@ -3,21 +3,33 @@ import D3Infographic from '../components/D3Infographic';
 import GIR_PERCENTAGE from '../lib/data/GIR_PERCENTAGE'
 import SCRAMBLING from '../lib/data/SCRAMBLING'
 import SG_PUTTING from '../lib/data/SG_PUTTING'
+import FINISH from '../lib/data/FINISH'
 
 export async function getStaticProps() {
 
-    const statObject = {}
+    // const statObject = {
+    //     players: [
+    //         {
+    //             "player": {
+    //                 "stat": statValue,
+    //                 "stat": statValue,
+    //                 "stat": statValue,
+    //                 "stat": statValue,
+    //                 "stat": statValue,
+    //             }
+    //         },
+    //     ]
+    // }
 
+    const statObject = []
 
     try {
         var data = await Promise.all([
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2021.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2020.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2019.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2018.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2017.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2016.eon.t033.html').then((response) => response.text()),
-            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02674.y2015.eon.t033.html').then((response) => response.text()),
+            fetch('https://www.pgatour.com/content/pgatour/stats/stat.109.y2021.eon.t033.html').then((response) => response.text()),
+            fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2021.eon.t033.html').then((response) => response.text()),
+            fetch('https://www.pgatour.com/content/pgatour/stats/stat.130.y2021.eon.t033.html').then((response) => response.text()),
+            fetch('https://www.pgatour.com/content/pgatour/stats/stat.103.y2021.eon.t033.html').then((response) => response.text()),
+
         ]);
         // var data = await Promise.all([
         //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2021.eon.t033.html').then((response) => response.text()),
@@ -38,22 +50,50 @@ export async function getStaticProps() {
         const $ = cheerio.load(data[i])
 
 
+
+
         const season = $('select option:selected').first().text()
         const statisticName = $('h1').text()
-        const tableStats = $('#statsTable th').toArray().map(el => $(el).text().trim().replaceAll(' ', "_"))
+        const subCategories = $('#statsTable th').toArray().map(el => $(el).text().trim().replaceAll(' ', "_"))
+        // subCategories.forEachstatObject[i][]
+        // statObject.players = { subCategories }
 
 
-        // EACH FETCH GETS AN i IN STATOBJECT
-        statObject[i] = {
-            headers: tableStats,
-            season: season,
-            statisticName: statisticName,
-            players: []
-        }
+
+
+        //Each Row On Table
+        $('#statsTable tr').toArray().splice(1).forEach((tableRow, j) => {
+            const statRow = $(tableRow).find('td').toArray().map(td => $(td).text().trim())
+            const name = $($(tableRow).find('td').toArray()[2]).text().trim()
+            const matchedPlayer = statObject.find(el => el.player === name)
+
+            console.log(matchedPlayer)
+            matchedPlayer ?
+                matchedPlayer.stats.push(statRow)
+                :
+
+                statObject.push({ player: name, stats: [[statRow]] })
+            console.log()
+            // !!statObject.find(el => el.player === name) && statObject.statRow
+
+            //     name: name,
+            //     [i]: {
+            //         [statObject[name]]: $(tableRow).find('td').toArray().map(td => $(td).text().trim())
+            //     }
+            // }
+
+
+        })
+
+
 
         $('#statsTable tr').toArray().forEach((tableRow, j) => {
-            statObject[i].players.push($(tableRow).find('td').toArray().map(td => $(td).text().trim()))
+
+
         })
+
+
+
 
 
 
@@ -61,7 +101,9 @@ export async function getStaticProps() {
 
     return {
         props: {
-            dataset: statObject
+            dataset: {
+                statObject
+            }
         }
     }
 
@@ -74,7 +116,7 @@ export default function PGAChampionship({ dataset }) {
     console.log(dataset)
     return (
         <div >
-            <D3Infographic x={GIR_PERCENTAGE} y={SCRAMBLING} />
+            <D3Infographic data={[GIR_PERCENTAGE, SCRAMBLING, SG_PUTTING, FINISH]} />
             {/* <D3Infographic dataset={dataset} /> */}
 
         </div >
