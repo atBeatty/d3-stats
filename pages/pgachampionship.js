@@ -33,15 +33,7 @@ export async function getStaticProps() {
             fetch('https://www.pgatour.com/content/pgatour/stats/stat.02568.y2021.eon.t033.html').then((response) => response.text()),
 
         ]);
-        // var data = await Promise.all([
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2021.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2020.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2019.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2018.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2017.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2016.eon.t033.html').then((response) => response.text()),
-        //     fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2015.eon.t033.html').then((response) => response.text()),
-        // ]);
+
 
 
     } catch (error) {
