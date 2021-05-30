@@ -30,9 +30,11 @@ const D3Infographic = ({ data }) => {
             .attr("cx", d => xScale(d.stats[1][4][1]))
             // .attr("cx", d => console.log(xScale(d[4])))
             .attr("cy", 50)
-            .attr("cy", d => height - yScale(d.stats[3][5][1]))
+            .attr("cy", d => height - yScale(d.stats[3][4][1]))
             .attr("fill", d => d.stats[0][0][1].replace("T", "") < 16 && "red")
-            .attr("r", d => 1 / d.stats[0][0][1].replace("T", "") * 50)
+
+            .attr("r", 5)
+        // .attr("r", d => 1 / d.stats[0][0][1].replace("T", "") * 50)
         // .style("opacity", d => d[1].fairwaysHitPercent / 100)
 
 
