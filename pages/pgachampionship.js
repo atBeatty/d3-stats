@@ -29,6 +29,7 @@ export async function getStaticProps() {
             fetch('https://www.pgatour.com/content/pgatour/stats/stat.02564.y2021.eon.t033.html').then((response) => response.text()),
             fetch('https://www.pgatour.com/content/pgatour/stats/stat.130.y2021.eon.t033.html').then((response) => response.text()),
             fetch('https://www.pgatour.com/content/pgatour/stats/stat.103.y2021.eon.t033.html').then((response) => response.text()),
+            fetch('https://www.pgatour.com/content/pgatour/stats/stat.376.y2021.eon.t033.html').then((response) => response.text()),
 
         ]);
         // var data = await Promise.all([
@@ -63,25 +64,18 @@ export async function getStaticProps() {
 
         //Each Row On Table
         $('#statsTable tr').toArray().splice(1).forEach((tableRow, j) => {
-            const statRow = $(tableRow).find('td').toArray().map(td => $(td).text().trim())
+            const statRow = $(tableRow).find('td').toArray().map((td, index) => [subCategories[index], $(td).text().trim()])
             const name = $($(tableRow).find('td').toArray()[2]).text().trim()
             const matchedPlayer = statObject.find(el => el.player === name)
 
-            console.log(matchedPlayer)
-            matchedPlayer ?
+            if (matchedPlayer) {
+
                 matchedPlayer.stats.push(statRow)
-                :
-
-                statObject.push({ player: name, stats: [[statRow]] })
-            console.log()
-            // !!statObject.find(el => el.player === name) && statObject.statRow
-
-            //     name: name,
-            //     [i]: {
-            //         [statObject[name]]: $(tableRow).find('td').toArray().map(td => $(td).text().trim())
-            //     }
-            // }
-
+            } else {
+                let newPlayerAdd = { player: name, stats: [] }
+                newPlayerAdd.stats.push(statRow)
+                statObject.push(newPlayerAdd)
+            }
 
         })
 
@@ -116,7 +110,7 @@ export default function PGAChampionship({ dataset }) {
     console.log(dataset)
     return (
         <div >
-            <D3Infographic data={[GIR_PERCENTAGE, SCRAMBLING, SG_PUTTING, FINISH]} />
+            <D3Infographic data={dataset} />
             {/* <D3Infographic dataset={dataset} /> */}
 
         </div >
