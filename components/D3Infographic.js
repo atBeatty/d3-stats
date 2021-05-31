@@ -6,10 +6,11 @@ import { useEffect, useRef, useState } from 'react'
 import FINISH from '../lib/data/FINISH.json'
 
 
+
 const D3Infographic = ({ data }) => {
     const cleanData = data.map(plObj => Object.entries(plObj)[0])
 
-    console.log(cleanData[0])
+    console.log(cleanData)
 
 
 
@@ -25,7 +26,7 @@ const D3Infographic = ({ data }) => {
     const width = size - marginR - marginL - padding
     console.log(size, width)
     const height = size - marginT - marginB - padding
-    const xScale = D3.scaleLinear().domain([0, 70]).range([marginL, width - marginR])
+    const xScale = D3.scaleLinear().domain([-4, 4]).range([marginL, width - marginR])
     const yScale = D3.scaleLinear().domain([0, 100]).range([height - marginT, marginT]);
 
 
@@ -34,14 +35,9 @@ const D3Infographic = ({ data }) => {
             .data(cleanData)
             .enter()
             .append("circle")
-            .attr("cy", d => (yScale(d[1].stats[4][1])))
-            // .attr("cx", d => console.log(xScale(d[4])))
-            .attr("cx", d => xScale(d[1].position.replaceAll("T", "")))
-            // .attr("fill", d => d.stats[0][0][1].replace("T", "") < 16 && "red")
-
-            .attr("r", 2)
-        // .attr("r", d => 1 / d.stats[0][0][1].replace("T", "") * 50)
-        // .style("opacity", d => d[1].fairwaysHitPercent / 100)
+            .attr("cy", d => yScale(d[1].scrambling[4]))
+            .attr("cx", d => xScale(d[1].stats[4][1]))
+            .attr("r", d => 5)
 
 
 

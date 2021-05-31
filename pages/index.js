@@ -14,8 +14,12 @@ export default function Home(props) {
   return (
     <div >
       <GolfDataFetch />
+
       <Link href='/stat.109.y2021.eon.t033.html' >
         <a>Stat 109</a>
+      </Link>
+      <Link href='/stat.02569.y2021.eon.t033.html' >
+        <a>Stat 02569</a>
       </Link>
       <Link href='/stat.130.y2021.eon.t033.html' >
         <a>Stat 130</a>

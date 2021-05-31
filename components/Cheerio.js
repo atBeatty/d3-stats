@@ -5,6 +5,7 @@
 import * as D3 from 'd3';
 import * as cheerio from 'cheerio';
 import FINISH from '../lib/data/FINISH.json'
+import SCRAMBLING from '../lib/data/SCRAMBLING.json'
 
 import Anime, { anime } from 'react-animejs-wrapper'
 import { useEffect, useRef, useState } from 'react'
@@ -32,10 +33,12 @@ export default function Cheerio({ text }) {
 
             )
             const finish = FINISH[0].players.find(pl => pl[2] === name)
+            const scrambling = SCRAMBLING[0].players.find(pl => pl[2] === name)
             !!finish
                 ?
                 dataset.push({
                     [name]: {
+                        scrambling: scrambling,
                         statisticName: statisticName,
                         position: Object.entries(finish)[0][1],
                         stats: statRow
@@ -46,6 +49,7 @@ export default function Cheerio({ text }) {
                 dataset.push({
                     [name]: {
                         statisticName: statisticName,
+                        scrambling: scrambling,
 
                         position: "-100",
                         stats: statRow
