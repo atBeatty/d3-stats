@@ -4,6 +4,7 @@
 // import AnimeJS from "../components/AnimeJS";
 import * as D3 from 'd3';
 import * as cheerio from 'cheerio';
+import FINISH from '../lib/data/FINISH.json'
 
 import Anime, { anime } from 'react-animejs-wrapper'
 import { useEffect, useRef, useState } from 'react'
@@ -11,28 +12,13 @@ import { useEffect, useRef, useState } from 'react'
 
 
 
-export default function GolfDataFetch({ data }) {
+export default function GolfDataFetch({ text }) {
+
     const [year, setYear] = useState('')
     const [stat, setStat] = useState('')
     const [url, setUrl] = useState('')
 
-    // console.log(playerData, "PLAYERDATA")
 
-    // const fetchData = async () => {
-    //     const req = await fetch('https://www.pgatour.com/content/pgatour/stats/stat.109.y2021.eon.t033.html');
-    //     const newData = await req.text();
-    //     console.log(newData)
-
-    //     // return setData(newData.results);
-    // };
-
-    // const handleClick = (event) => {
-    //     event.preventDefault();
-    //     fetchData();
-    // };
-    // useEffect(() => {
-    //     fetchData
-    // }, [])
 
 
 

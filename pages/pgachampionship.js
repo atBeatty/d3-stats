@@ -46,13 +46,7 @@ export async function getStaticProps() {
         const season = $('select option:selected').first().text()
         const statisticName = $('h1').text()
         const subCategories = $('#statsTable th').toArray().map(el => $(el).text().trim().replaceAll(' ', "_"))
-        // subCategories.forEachstatObject[i][]
-        // statObject.players = { subCategories }
 
-
-
-
-        //Each Row On Table
         $('#statsTable tr').toArray().splice(1).forEach((tableRow, j) => {
             const statRow = $(tableRow).find('td').toArray().map((td, index) =>
 
@@ -106,7 +100,7 @@ export async function getStaticProps() {
 }
 
 export default function PGAChampionship({ dataset }) {
-    console.log(dataset)
+    // console.log(dataset)
     return (
         <div >
             {/* <D3Infographic data={dataset} /> */}
