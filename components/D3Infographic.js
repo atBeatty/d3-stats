@@ -26,8 +26,16 @@ const D3Infographic = ({ data }) => {
     const width = size - marginR - marginL - padding
     console.log(size, width)
     const height = size - marginT - marginB - padding
-    const xScale = D3.scaleLinear().domain([-4, 4]).range([marginL, width - marginR])
-    const yScale = D3.scaleLinear().domain([0, 100]).range([height - marginT, marginT]);
+
+    const winnerScale = D3.scaleLinear()
+        .domain([0, 72])
+        .range([8, 1])
+    const xScale = D3.scaleLinear()
+        .domain([0, 100])
+        .range([marginL, width - marginR])
+    const yScale = D3.scaleLinear()
+        .domain([25, 80])
+        .range([height - marginT, marginT]);
 
 
     useEffect(() => {
@@ -36,8 +44,10 @@ const D3Infographic = ({ data }) => {
             .enter()
             .append("circle")
             .attr("cy", d => yScale(d[1].scrambling[4]))
-            .attr("cx", d => xScale(d[1].stats[4][1]))
-            .attr("r", d => 5)
+            .attr("cx", d => xScale(d[1].stats[5][1]))
+            .attr("r", d => d[1].position.replace("T", "") === '1' ? 12 : winnerScale(d[1].position.replace("T", "")))
+            .style("fill", d => d[1].position.replace("T", "") === '1' ? "purple" : d[1].position.replaceAll("T", "") > 10 ? "blue" : "yellow")
+
 
 
 
@@ -57,7 +67,14 @@ const D3Infographic = ({ data }) => {
             <g className="x-axis"></g>
             <g className="y-axis"></g>
         </svg>
-    </div>
+        <style jsx>
+            {`
+            .infographic-holder {
+                margin: auto;
+                width:33vw;
+            }
+        `}
+        </style></div>
 }
 
 
