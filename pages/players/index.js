@@ -23,7 +23,10 @@ export default function PlayersIndex({ text }) {
 
     const $ = cheerio.load(text)
     const tables = $('a.tab-nav-link').toArray().map(a => $(a).text().trim())
-    console.log(tables)
+    const tr = $('tr').toArray()
+    const th = $('th').text()
+    const tdArray = $(tr).find('td').toArray().map(td => $(td).text().trim())
+    console.log(th)
     // console.log($('#performanceTournament').find('table').toArray())
     return (
         <div >

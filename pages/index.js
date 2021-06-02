@@ -35,6 +35,9 @@ export default function Home(props) {
       <Link href='/stat.02372.y2021.eon.t033.html' >
         <a>Stat 02372</a>
       </Link>
+      <Link href='/stat.376.y2021.eon.t033.html' >
+        <a>Stat 376</a>
+      </Link>
     </div >
   )
 }

@@ -10,35 +10,37 @@ import FINISH from '../lib/data/FINISH.json'
 const D3Infographic = ({ data }) => {
     const cleanData = data.map(plObj => Object.entries(plObj)[0])
 
-    console.log(cleanData)
-
+    cleanData.sort((a, b) => D3.descending(a[1].position.replaceAll("T", ""), b[1].position.replaceAll("T", "")))
+    console.log(cleanData[3])
 
 
 
 
     const d3Ref = useRef()
     const size = 600;
-    const padding = 10;
+    const padding = 30;
     const marginT = 25;
     const marginB = 25;
     const marginL = 25;
     const marginR = 25;
     const width = size - marginR - marginL - padding
-    console.log(size, width)
     const height = size - marginT - marginB - padding
 
     const winnerScale = D3.scaleLinear()
         .domain([0, 72])
         .range([8, 1])
+
     const xScale = D3.scaleLinear()
-        .domain([0, 100])
-        .range([marginL, width - marginR])
+        .domain([-5, 5])
+        .range([marginL + padding, width - marginR])
+
     const yScale = D3.scaleLinear()
         .domain([25, 80])
-        .range([height - marginT, marginT]);
+        .range([height - marginT - padding, marginT]);
 
 
     useEffect(() => {
+        D3.selectAll('text').remove()
         D3.select('svg').selectAll('circle')
             .data(cleanData)
             .enter()
@@ -51,10 +53,13 @@ const D3Infographic = ({ data }) => {
 
 
 
-        D3.select('svg').append('text').text("").attr('transform', `translate(${width / 2},${height})`).style("color", "red").style("font-size", "1rem").style("text-anchor", "middle")
 
-        D3.select('g.x-axis').attr("transform", `translate(0, ${height - marginB})`).call(D3.axisBottom(xScale))
-        D3.select('g.y-axis').attr("transform", `translate(${marginL})`).call(D3.axisLeft(yScale))
+        D3.select('g.x-axis').attr("transform", `translate(0, ${height - padding - marginB})`).call(D3.axisBottom(xScale))
+        D3.select('svg').append('text').attr("x", width / 2).attr("y", height).text("HELLO")
+
+        D3.select('g.y-axis').attr("transform", `translate(${marginL + padding})`).call(D3.axisLeft(yScale))
+        D3.select('svg').append('text').attr("x", width / 2).attr("y", 0).style("transform", "rotate(270deg)").text("Yaxis")
+
 
 
     })
