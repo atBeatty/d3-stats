@@ -11,7 +11,7 @@ const D3Infographic = ({ data }) => {
     const cleanData = data.map(plObj => Object.entries(plObj)[0])
 
     cleanData.sort((a, b) => D3.descending(a[1].position.replaceAll("T", ""), b[1].position.replaceAll("T", "")))
-    console.log(cleanData[3])
+    console.log(cleanData[1][1].stats)
 
 
 
@@ -26,16 +26,17 @@ const D3Infographic = ({ data }) => {
     const width = size - marginR - marginL - padding
     const height = size - marginT - marginB - padding
 
+
     const winnerScale = D3.scaleLinear()
         .domain([0, 72])
         .range([8, 1])
 
     const xScale = D3.scaleLinear()
-        .domain([-5, 5])
+        .domain([0, 80])
         .range([marginL + padding, width - marginR])
 
     const yScale = D3.scaleLinear()
-        .domain([25, 80])
+        .domain([-10, 10])
         .range([height - marginT - padding, marginT]);
 
 
@@ -45,20 +46,31 @@ const D3Infographic = ({ data }) => {
             .data(cleanData)
             .enter()
             .append("circle")
-            .attr("cy", d => yScale(d[1].scrambling[4]))
-            .attr("cx", d => xScale(d[1].stats[5][1]))
-            .attr("r", d => d[1].position.replace("T", "") === '1' ? 12 : winnerScale(d[1].position.replace("T", "")))
-            .style("fill", d => d[1].position.replace("T", "") === '1' ? "purple" : d[1].position.replaceAll("T", "") > 10 ? "blue" : "yellow")
+            // .attr("cy", d => yScale(d[1].scrambling[4]))
+            // .attr("cy", d => yScale(d[1].position.replace("T", "")))
+
+            // .attr("cy", d => d[1].stats[7][1] === "E" ? (yScale(0)) : (yScale(d[1].stats[7][1])))
+            .attr('cy', d => yScale(d[1].stats[5][1]))
+            .attr("cx", d => xScale(d[1].position.replace("T", "")))
+            // .attr("cx", d => xScale(d[1].stats[5][1] / d[1].stats[6][1]))
+            // .attr("cx", d => xScale(d[1].stats[5][1] / d[1].stats[6][1]))
+
+            .attr("r", 5)
+            // .attr("r", d => d[1].position.replace("T", "") === '1' ? 14 : winnerScale(d[1].position.replace("T", "")))
+
+            .attr('stroke', d => d[1].position.replaceAll("T", "") < 2 ? "coral" : "")
+            .attr('stroke-width', d => d[1].position.replaceAll("T", "") < 2 ? "5" : "")
+            .style("fill", d => d[1].position.replace("T", "") === '1' ? "chartreuse" : d[1].position.replaceAll("T", "") > 10 ? "green" : "lightgreen")
 
 
 
 
 
         D3.select('g.x-axis').attr("transform", `translate(0, ${height - padding - marginB})`).call(D3.axisBottom(xScale))
-        D3.select('svg').append('text').attr("x", width / 2).attr("y", height).text("HELLO")
+        D3.select('svg').append('text').attr("x", width / 2 - padding).attr("y", height).text('FINISH POSITION')
 
         D3.select('g.y-axis').attr("transform", `translate(${marginL + padding})`).call(D3.axisLeft(yScale))
-        D3.select('svg').append('text').attr("x", width / 2).attr("y", 0).style("transform", "rotate(270deg)").text("Yaxis")
+        D3.select('svg').append('text').attr("x", width / 2 - 2 * padding).attr("y", 0).style("transform", "rotate(-270deg)").text(`${cleanData[1][1].stats[5][0]} `)
 
 
 
@@ -74,11 +86,21 @@ const D3Infographic = ({ data }) => {
         </svg>
         <style jsx>
             {`
-            .infographic-holder {
-                margin: auto;
-                width:33vw;
+            * {
+                font-family: Arial;
             }
-        `}
+            h1 {
+                width: auto;
+                text-align:center;
+            }
+            .infographic-holder {
+                display:flex;
+                flex-direction:column;
+                align-content:center;
+                margin: auto;
+                width: 33vw;
+            }
+            `}
         </style></div>
 }
 
