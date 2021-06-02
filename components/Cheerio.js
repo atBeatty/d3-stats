@@ -51,7 +51,7 @@ export default function Cheerio({ text }) {
                         statisticName: statisticName,
                         scrambling: scrambling,
 
-                        position: "-100",
+                        position: "100",
                         stats: statRow
                     }
                 })
