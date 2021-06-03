@@ -27,13 +27,13 @@ export default function Tournaments(props) {
         const name = $(tableRow).find('td.tournament-name .tournament-text a').text().trim()
         const tId = $(tableRow).find('td.tournament-name .tournament-links a').first().attr('data-tournament')
         const order = index + 1
-        return {id: tId, name: name, order: order}
+        return { id: tId, name: name, order: order }
 
     })
-     console.log(tournamentArray)
     return <div className="tournaments-wrapper">
         Tournaments
-        
+        {tournamentArray.map(t => <h2>{t.name} --- //// {t.id}</h2>)}
+
     </div>
 }
 //
