@@ -11,7 +11,6 @@ const D3Infographic = ({ data }) => {
     const cleanData = data.map(plObj => Object.entries(plObj)[0])
 
     cleanData.sort((a, b) => D3.descending(a[1].position.replaceAll("T", ""), b[1].position.replaceAll("T", "")))
-    console.log(cleanData[1][1].stats)
 
 
 

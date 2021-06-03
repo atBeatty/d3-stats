@@ -30,7 +30,6 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({ params }) {
-    console.log(params)
     const res = await fetch(`https://www.pgatour.com/content/pgatour/stats/${params.stat}`)
     const data = await res.text()
 

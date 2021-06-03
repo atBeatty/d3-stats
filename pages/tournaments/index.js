@@ -2,7 +2,6 @@
 
 import * as cheerio from 'cheerio'
 export async function getStaticProps({ params }) {
-    console.log(params)
     const res = await fetch(`https://www.pgatour.com/tournaments/schedule.html`)
     const data = await res.text()
 
