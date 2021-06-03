@@ -29,7 +29,7 @@ export async function getStaticProps() {
     const statPairs = tdsArray.map((row) => row.map((td, index) => [td, ths[index]]))
     const option = $('option:selected').text().split('Tournament Only')
     console.log(statPairs[3])
-    return { stat: statName, players: tdsArray, tournament: option }
+    return { stat: statName, players: statPairs, tournament: option }
   })
 
   return {
@@ -42,15 +42,6 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
   const d3Data = {}
-  // console.log(data)
-
-
-
-
-  // console.log(d3Data)
-
-
-
 
   return (
     <div >

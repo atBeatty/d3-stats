@@ -9,13 +9,15 @@ import FINISH from '../lib/data/FINISH.json'
 
 const PreviousPerformance = ({ data }) => {
     // const cleanData = data.map(plObj => Object.entries(plObj)[0])
-
+    // console.log(data)
     // cleanData.sort((a, b) => D3.descending(a[1].position.replaceAll("T", ""), b[1].position.replaceAll("T", "")))
 
     const hl = data.map(stat => {
+        return stat.players.find(p => p[2][0] === "Abraham Ancer")
 
-        return stat.players.filter(pl => pl[2] === 'Abraham Ancer')
+
     })
+    console.log(hl)
     const highlights = ["Sam Burns", "Jordan Spieth", "Matt Kuchar"]
 
     const d3Ref = useRef()
