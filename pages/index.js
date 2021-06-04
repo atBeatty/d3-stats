@@ -20,15 +20,14 @@ export async function getStaticProps() {
 
   const dataset = bodyArray.map(statPage => {
     const $ = cheerio.load(statPage)
-    const ths = $('#statsTable').find('th').toArray().map(statCat => $(statCat).text().trim())
+    const ths = $('#statsTable').find('th').toArray().map(statCat => $(statCat).text().trim().replaceAll(" ", "_"))
 
     const trs = $('tbody').find('tr').toArray()
     const statName = $('h1').text()
     const tdsArray = trs.map(row => $(row).find('td').toArray().map(td => $(td).text().trim())).splice(1)
-
+    console.log(ths)
     const statPairs = tdsArray.map((row) => row.map((td, index) => [td, ths[index]]))
     const option = $('option:selected').text().split('Tournament Only')
-    console.log(statPairs[3])
     return { stat: statName, players: statPairs, tournament: option }
   })
 

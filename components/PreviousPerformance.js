@@ -13,15 +13,13 @@ const PreviousPerformance = ({ data }) => {
     // cleanData.sort((a, b) => D3.descending(a[1].position.replaceAll("T", ""), b[1].position.replaceAll("T", "")))
 
     const hl = data.map(stat => {
-        return stat.players.find(p => p[2][0] === "Abraham Ancer")
+        return stat.players.filter(p => p[2][0] === "Corey Conners")
 
+    }).filter(stat => stat.length > 0).map(st => st[0])
 
-    })
     console.log(hl)
-    const highlights = ["Sam Burns", "Jordan Spieth", "Matt Kuchar"]
-
     const d3Ref = useRef()
-    const size = 600;
+    const size = 900;
     const padding = 30;
     const marginT = 25;
     const marginB = 25;
@@ -31,32 +29,33 @@ const PreviousPerformance = ({ data }) => {
     const height = size - marginT - marginB - padding
 
 
-    const x = D3.scaleBand()
-        .range([0, width])
-        .padding(0.1);
-    const y = D3.scaleLinear()
-        .range([height, 0]);
-
-
 
     useEffect(() => {
         D3.selectAll('text').remove()
         D3.select('svg').selectAll('rect')
-            .data(hl)
+            .data(hl[0])
             .enter()
             .append('rect')
-            .attr("x", (d, i) => i * 30)
+            .attr("x", (d, i) => i * 20)
             .attr("width", 10)
             .attr("y", d => 5)
             .attr("height", d => 20)
 
 
 
+        const xScale = D3.scaleBand()
+            .range([0, width - 300])
+            .domain(hl[0].map(d => d[1]))
+            .padding(0.1);
+        const y = D3.scaleLinear()
+            .range([height, 0]);
 
 
 
-        // D3.select('g.x-axis').attr("transform", `translate(0, ${height - padding - marginB})`).call(D3.axisBottom(xScale))
-        // D3.select('svg').append('text').attr("x", width / 2 - padding).attr("y", height).text('FINISH POSITION')
+
+
+        D3.select('g.x-axis').attr("transform", `translate(0, ${height - padding - marginB})`).call(D3.axisBottom(xScale))
+        D3.select('svg').append('text').attr("x", width / 2 - padding).attr("y", height).text('FINISH POSITION')
 
         // D3.select('g.y-axis').attr("transform", `translate(${marginL + padding})`).call(D3.axisLeft(yScale))
         // D3.select('svg').append('text').attr("x", width / 2 - 2 * padding).attr("y", 0).style("transform", "rotate(-270deg)").text(`${cleanData[1][1].stats[5][0]} `)
