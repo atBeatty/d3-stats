@@ -42,9 +42,12 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   const d3Data = {}
 
-  return (
-    <div >
+  return (<>
+    <div>
+
       <PreviousPerformance data={data} />
+    </div>
+    <div >
 
       <Link href='/stat.109.y2021.eon.t033.html' >
         <a>Stat 109</a>
@@ -68,5 +71,6 @@ export default function Home({ data }) {
         <a>Stat 376</a>
       </Link>
     </div >
+  </>
   )
 }
